@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class SumOfASequence {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Last number? ");
+        int lnum = Integer.valueOf(scanner.nextLine());
+        
+        //String store = "";
+        int sum = 0;
+        for (int i=1; i<=lnum;i++){
+            sum += i;
+            //store += i + " + ";
+        }
+        System.out.println(/*store + " = " + */sum);
+
+    }
+}
