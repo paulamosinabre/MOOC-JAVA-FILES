@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ThirdElement {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<String> myList = new ArrayList<>(100);
+
+        while (true) {
+            String list = scanner.nextLine();
+
+            if (list.equals("")) {
+                break;
+            }
+
+            System.out.println(myList.add(list));
+        }
+        System.out.println(myList.get(2));
+    }
+}

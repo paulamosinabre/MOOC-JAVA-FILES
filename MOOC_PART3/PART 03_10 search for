@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class QUIZ {
+
+     Scanner scanner = new Scanner(System.in);
+     ArrayList <Integer> numList = new ArrayList<>();
+    
+     while(true){
+         int userList = scanner.nextInt();
+         
+         if(userList == -1)
+             break;
+         
+         numList.add(userList);
+     }    
+     
+     System.out.println("Search for? ");
+     int search = scanner.nextInt();
+     
+     for(int i = 0; i < numList.size(); i++){
+        
+ 
+        if(search == numList.get(i)){
+            System.out.println(search + " is at index " + i);
+        } else {
+            System.out.println(" ");
+        } 
+     }  
+    }
+}

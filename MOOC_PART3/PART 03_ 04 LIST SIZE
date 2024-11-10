@@ -1,0 +1,25 @@
+//ALLOWS TO STORE ENTERED VALUES IN A LIST THEN PRINT THE TOTAL
+
+import java.util.ArrayList;
+import java.util.Scanner;
+public class QUIZ {
+
+    public static void main(String[] args) {
+      Scanner scan = new Scanner(System.in);
+      ArrayList <String> list = new ArrayList<>();
+      
+      int values = 0;
+      while(true){
+          String userList = scan.nextLine();
+         
+          if(userList.equals(""))
+              break;
+          
+          System.out.println(list.add(userList));
+          
+          values = list.size();
+      }
+        System.out.println("Total: " + values);
+    }
+}
+

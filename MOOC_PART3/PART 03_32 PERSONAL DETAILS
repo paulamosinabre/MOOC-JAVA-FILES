@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PersonalDetails {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        String storeName = "";
+        double sum = 0;
+        int numberOfYear = 0;
+        
+        while(true){
+            String text = scanner.nextLine();
+            
+            if(text.isEmpty())
+                break;
+            
+            String[] parts = text.split(",");
+            String name = parts[0];
+            
+            if(name.length() > storeName.length()){
+                storeName = name;
+            }
+            
+            //to calculate the sum
+            sum += Integer.valueOf(parts[1]);
+            numberOfYear++;
+        }
+        System.out.println("Longest name: " + storeName);
+        
+        if(numberOfYear > 0){
+                System.out.println("Average of the birth years: " + (double) sum / numberOfYear);
+            } else {
+                System.out.println("No input.");
+            }
+        
+    }
+}

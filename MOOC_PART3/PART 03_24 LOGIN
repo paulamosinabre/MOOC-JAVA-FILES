@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Login {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        List<String> usernames = new ArrayList<>();
+        List<String> passwords = new ArrayList<>();
+        
+        // Adding users
+        usernames.add("alex");
+        passwords.add("sunshine");
+        usernames.add("emma");
+        passwords.add("haskell");
+        
+        System.out.println("Enter username: ");
+        String username = scanner.nextLine();
+        
+        System.out.println("Enter password: ");
+        String password = scanner.nextLine();
+        
+        boolean loggedIn = false;
+
+        for (int i = 0; i < usernames.size(); i++) {
+            if (usernames.get(i).equals(username) && passwords.get(i).equals(password)) {
+                System.out.println("You have successfully logged in!");
+                loggedIn = true;
+                break; // Exit the loop if logged in
+            }
+        }
+
+        if (!loggedIn) {
+            // Check if the username exists
+            boolean userExists = usernames.contains(username);
+            if (userExists) {
+                System.out.println("Incorrect password!");
+            } else {
+                System.out.println("Account does not exist!");
+            }
+        }
+
+        scanner.close(); // Close the scanner
+    }
+}

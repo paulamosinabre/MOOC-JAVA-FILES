@@ -1,0 +1,22 @@
+// print the last in list
+import java.util.ArrayList;
+import java.util.Scanner;
+public class QUIZ {
+    public static void main(String[] args) {
+      Scanner scan = new Scanner(System.in);
+      ArrayList <String> list = new ArrayList<>();
+      
+      int values = 0;
+      while(true){
+          String userList = scan.nextLine();
+         
+          if(userList.equals(""))
+              break;
+          
+          System.out.println(list.add(userList));
+          
+          values = list.lastIndexOf(userList);
+      }
+        System.out.println(list.get(values));
+    }
+}

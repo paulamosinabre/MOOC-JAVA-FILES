@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class QUIZ {
+
+    public static void main(String[] args) {
+     Scanner scanner = new Scanner(System.in);
+     ArrayList <Integer> numList = new ArrayList<>();
+    
+     while(true){
+         int userList = scanner.nextInt();
+         
+         if(userList == -1)
+             break;
+         
+         numList.add(userList);
+     }    
+     
+     int greatest = numList.get(0);
+     for(int i = 0; i < numList.size(); i++ ){
+         int num = numList.get(i);
+         
+         if(greatest < num){
+             greatest = num;
+         }
+     }
+        System.out.println("The greatest number: " + greatest);
+    }
+}

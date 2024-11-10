@@ -1,0 +1,21 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class SecondPlusThird {
+
+    public static void main(String[] args) {
+    
+        Scanner scan = new Scanner(System.in);
+        ArrayList <Integer> myList = new ArrayList<>();
+        
+        while (true){
+            int userList = Integer.valueOf(scan.nextLine());
+            
+            if (userList == 0) {
+                break;
+            }
+            System.out.println(myList.add(userList));
+        }
+        System.out.println(myList.get(1) + myList.get(2));
+    }
+}

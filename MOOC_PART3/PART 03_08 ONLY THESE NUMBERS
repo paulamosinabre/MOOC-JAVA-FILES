@@ -1,0 +1,28 @@
+// Allows the user to print specific indeces 
+import java.util.ArrayList;
+import java.util.Scanner;
+public class QUIZ {
+
+    public static void main(String[] args) {
+     Scanner scanner = new Scanner(System.in);
+     ArrayList <Integer> numList = new ArrayList<>();
+    
+     while(true){
+         int userList = scanner.nextInt();
+         
+         if(userList == -1)
+             break;
+         
+         numList.add(userList);    
+     }
+        System.out.println("From where? ");
+        int index1 = scanner.nextInt();
+        
+        System.out.println("To where? ");
+        int index2 = scanner.nextInt();
+        
+        System.out.println(numList.get(index1));
+        System.out.println(numList.get(index2));
+        
+    }
+}
