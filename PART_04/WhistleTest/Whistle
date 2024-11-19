@@ -1,0 +1,16 @@
+
+public class Whistle {
+    // to be accessible to any method within the class
+    private String sound; 
+    
+    //the arguments inside the main method will be passed here in the parameters
+    public Whistle (String whistleSound){
+        //initialization and declaration
+        this.sound = whistleSound;
+    }
+    
+    //for printing the output
+    public void sound(){
+        System.out.println(sound);
+    }
+}
