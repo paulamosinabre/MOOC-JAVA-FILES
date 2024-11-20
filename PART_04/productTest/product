@@ -1,0 +1,30 @@
+public class Main {
+
+    public static void main(String[] args) {
+        // This is an empty main method for testing the Product class
+        // Try:
+
+        // Product product = new Product("Banana", 1.1, 13);
+        // product.printProduct();
+        
+        Product product = new Product("Banana", 1.1, 13);
+        product.printProduct();
+    }
+}
+
+
+public class Product {
+    private String name;
+    private double price;
+    private int qty;
+    
+    public Product(String name, double price, int qty){
+        this.name = name;
+        this.price = price;
+        this.qty = qty;
+    }
+    
+    public void printProduct(){
+        System.out.println(name +", " + "price " + price + ", " + qty + " pcs");
+    }
+}
