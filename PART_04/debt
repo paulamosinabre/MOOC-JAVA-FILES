@@ -1,0 +1,41 @@
+public class Main {
+
+    public static void main(String[] args) {
+        // Test your Debt class here
+        Debt debt = new Debt(120000.0, 1.01);
+        debt.printBalance();
+
+        debt.waitOneYear();
+        debt.printBalance();
+
+        int years = 0;
+
+        while (years < 20) {
+            debt.waitOneYear();
+           years = years + 1;
+        }
+
+        debt.printBalance();
+    }
+}
+
+
+public class Debt {
+    private double balance;
+    private double interest;
+    
+    
+    public Debt(double balance, double interest){
+        this.balance = balance;
+        this.interest = interest;  
+    }
+    
+    public void waitOneYear(){
+        this.balance = this.balance * this.interest;
+    }
+    
+    public void printBalance(){
+        System.out.println(this.balance);
+    }
+    
+}
