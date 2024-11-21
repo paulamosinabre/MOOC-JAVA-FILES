@@ -1,0 +1,42 @@
+
+public class Main {
+
+    public static void main(String[] args) {
+        // Test your Multiplier class here
+        Multiplier multiplyByThree = new Multiplier(3);
+        Multiplier multiplyByfour = new Multiplier(4);
+        
+        System.out.println("multiplyByThree.multiply(2)" + multiplyByThree.multiply(2));
+        System.out.println("multiplyByFour.multiply(5)" + multiplyByThree.multiply(5));
+        
+    }
+}
+
+
+public class Multiplier {
+    private int num;
+    
+    public Multiplier(int num){
+        this.num = num;
+    }
+    
+    public int multiply(int userNum){
+        return this.num * userNum;
+    }
+    
+}
+
+//MODEL SOLUTION
+
+public class Multiplier {
+ 
+    private int number;
+ 
+    public Multiplier(int number) {
+        this.number = number;
+    }
+ 
+    public int multiply(int number) { //used the same parameter name since it is a local variable, so it is fine.
+        return this.number * number;
+    }
+}
