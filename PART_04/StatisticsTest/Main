@@ -1,0 +1,40 @@
+
+import java.util.Scanner;
+
+public class MainProgram {
+   
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in);
+        
+        Statistics statistics = new Statistics();
+        Statistics sumOdd = new Statistics();
+        Statistics sumEven = new Statistics();
+        System.out.println("Enter numbers: ");
+        int num;
+        int sum = 0;
+        
+        
+        while(true){
+            num = scan.nextInt();
+            
+            if(num == -1){
+                break;
+            }
+            
+            statistics.addNumber(num);
+            if(num % 2 == 0){
+                sumEven.addNumber(num);
+                
+            } else {
+                sumOdd.addNumber(num);
+                
+            }
+         
+        }
+        System.out.println("Sum: " + statistics.sum());
+        System.out.println("Sum of odd numbers: " + sumOdd.sum() );
+        System.out.println("Sum of even numbers: " + sumEven.sum());
+    }
+}
+
