@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+        // implement here the program that allows the user to enter 
+        // book information and to examine them
+        ArrayList<Book> book = new ArrayList<>();
+        Scanner scan = new Scanner(System.in);
+        
+        while(true){
+            System.out.print("Enter title: ");
+            String title = scan.nextLine();
+            
+            if(title.isEmpty())
+                break;
+            
+            System.out.print("Pages: ");
+            int pages = scan.nextInt();
+            scan.nextLine();
+            
+            System.out.print("Publication year: ");
+            int year = scan.nextInt();
+            scan.nextLine();
+            
+            book.add(new Book(title, pages, year));
+        }
+        
+        System.out.print("What information will be printed? ");
+        String info = scan.nextLine();
+        
+        for(Book books: book){
+            if(info.equalsIgnoreCase("name")){
+                System.out.println(books.getTitle());
+            } else if (info.equalsIgnoreCase("everything")){
+                System.out.println(books);
+            } else {
+                System.out.println("Invalid!");
+            }
+        }
+    }
+}
