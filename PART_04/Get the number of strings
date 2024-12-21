@@ -1,0 +1,21 @@
+
+import java.util.Scanner;
+
+public class MyClass {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        String words;
+        while(true){
+            words = scanner.nextLine();
+            if(words.equals("end")){
+                break;
+            }
+            
+        }
+        
+            int number = Integer.valueOf(words);
+            System.out.println(number);
+    }
+}
