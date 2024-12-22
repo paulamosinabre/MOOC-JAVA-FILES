@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Cubes {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+       
+        while(true){
+            String word = scan.nextLine();
+            
+            if(word.equals("end")){
+                break;
+            }
+            
+            int convert = Integer.valueOf(word);
+            System.out.println(convert * convert * convert);
+        }
+    }
+}
