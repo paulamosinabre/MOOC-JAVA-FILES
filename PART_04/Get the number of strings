@@ -1,21 +1,23 @@
 
 import java.util.Scanner;
 
-public class MyClass {
+public class Mooc {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         
-        String words;
+        String word;
+        int i = 0;
         while(true){
-            words = scanner.nextLine();
-            if(words.equals("end")){
+            word = scan.nextLine();
+            
+            if(word.equals("end")){
                 break;
             }
-            
+            i++;
         }
-        
-            int number = Integer.valueOf(words);
-            System.out.println(number);
+        System.out.println(i);
     }
 }
+
+//doing parseInt or using Integer.valueOf will produce an number
