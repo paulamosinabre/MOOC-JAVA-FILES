@@ -1,31 +1,35 @@
-
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class NumbersFromAFile {
+public class IsItInTheFile {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("File? ");
+        System.out.println("Name of the file:");
         String file = scanner.nextLine();
-        System.out.print("Lower bound? ");
-        int lowerBound = Integer.valueOf(scanner.nextLine());
-        System.out.print("Upper bound? ");
-        int upperBound = Integer.valueOf(scanner.nextLine());
+
+        System.out.println("Search for:");
+        String searchedFor = scanner.nextLine();
         
-        int count = 0;
         try(Scanner scan = new Scanner(Paths.get(file))){
-            int row = Integer.valueOf(scan.nextLine());
-            
-            while(scan.hasNextLine()){
-                if(row >= lowerBound && row <= upperBound){
-                    count++;
+            while(true){
+                
+                String row = scan.nextLine();
+                if(row.contains(searchedFor)){
+                    System.out.println("Found!"); 
+                    break;
+                }
+                
+                if(scan.hasNextLine() == false) {
+                    System.out.println("Not found."); 
+                    break;
                 }
             }
-            System.out.println("Number: " + count);
+            
         } catch (Exception e){
-            System.out.println("Error");
+            System.out.println("Reading the file " + file + " failed.");
         }
     }
 }
+
