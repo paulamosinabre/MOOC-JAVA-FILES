@@ -1,0 +1,55 @@
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SportStatistics {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("File: ");
+        String file = scan.nextLine();
+        System.out.println("Team: ");
+        String findTeam = scan.nextLine();
+
+        ArrayList<Teams> team = readTeams(file, findTeam);
+
+    }
+
+    public static ArrayList<Teams> readTeams(String file, String findTeam) {
+        ArrayList<Teams> teams = new ArrayList<>();
+
+        try ( Scanner readScan = new Scanner(Paths.get(file))) {
+            int games = 0;
+            int win = 0;
+            int lose = 0;
+            int tie = 0;
+            while (readScan.hasNextLine()) {
+                String line = readScan.nextLine();                
+                //get value of each
+                String[] parts = line.split(",");
+                String team1 = parts[0];
+                String team2 = parts[1];
+                int htp = Integer.valueOf(parts[2]);
+                int vtp = Integer.valueOf(parts[3]);
+
+                if (line.contains(findTeam)) {
+                    games++;
+                    
+                } if(parts[0].equals(findTeam) && htp > vtp){
+                    win++;
+                } if (parts[1].equals(findTeam) && htp < vtp){
+                    win++;
+                }
+                
+            }
+            
+            System.out.println("Games: " + games);
+            System.out.println("Wins: " + win);
+            System.out.println("Losses: " + (games - win));
+    
+        } catch (Exception e) {
+            System.out.println("Error");
+        }
+        return teams;
+    }
+}
