@@ -1,0 +1,27 @@
+
+public class Timer {
+    private int hundredthsSeconds;
+    private int seconds;
+    
+    public Timer(){
+        this.hundredthsSeconds = 0;
+        this.seconds = 0;
+    }
+    
+    public String toString(){
+        return "[" + this.seconds + ": " + this.hundredthsSeconds + "]"; 
+    }
+    
+    public void advance(){
+        if (hundredthsSeconds == 100){
+            this.seconds = 0;
+            this.seconds++;
+        }
+        
+        if(seconds == 60){
+            this.seconds = 0;
+            this.seconds++;
+        }
+        
+    }
+}
