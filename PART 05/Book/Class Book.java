@@ -1,4 +1,4 @@
-
+// my code is similar to model solution
 public class Book {
     private String author;
     private String name;
