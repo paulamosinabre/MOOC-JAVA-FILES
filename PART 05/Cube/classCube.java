@@ -1,4 +1,3 @@
-
 public class Cube {
     private int num;
     private int volume;
@@ -8,10 +7,11 @@ public class Cube {
     }
     
     public int volume(){
-        return volume = num * num * num;
+        return this.volume = num * num * num; // NO NEED TO DO THIS. KAHIT NUM * NUM * NUM NA LANG
     }
     
     public String toString(){
-        return "The length of the edge is " + num + " and the volume " + volume;
+        return "The length of the edge is " + num + " and the volume " + volume(); // BAKIT HINDI THIS.VOLUME? KASI MAGIGING OUTPUT NIYA 0
     }
 }
+
