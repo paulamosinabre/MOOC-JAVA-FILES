@@ -7,8 +7,10 @@ public class Program {
 
         // Experiment with your program here
         
-        System.out.print("Enter a number:");
+        System.out.println("Enter a number:");
         int num = scanner.nextInt();
         Cube cube = new Cube(num);
+        System.out.println(cube.volume());
+        System.out.println(cube);
     }
 }
