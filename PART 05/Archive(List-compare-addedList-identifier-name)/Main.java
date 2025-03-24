@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -27,20 +26,18 @@ public class Main {
             
             Archive archive = new Archive(identifier, name);
             
-            if(identifier.equals(archive)){
-                System.out.println("same identifier");
-            }
-            
             if(list.contains(archive)){
+                System.out.println("Already exists!");
+            } else {
+                list.add(archive);
+                items++;
             }
-            
-            list.add(archive);
-            
         }
         System.out.println("==Items==");
        
        for(Archive archive: list){
            System.out.println(archive.getIdentifier () + ": " + archive.getName());
        }
+       // System.out.println("Number of items: " + items);
     }
 }
