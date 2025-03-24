@@ -1,10 +1,8 @@
-
 import java.util.Objects;
-
 
 public class Archive {
     
-    private String identifier;
+    public String identifier;
     private String name;
     
     public Archive(String identifier, String name){
@@ -33,6 +31,10 @@ public class Archive {
         
         if(this.identifier.equals(archiveCompared.identifier) &&
                 this.name.equals(archiveCompared.name)){
+            return true;
+        }
+        
+        if(this.identifier.equals(archiveCompared.identifier)){
             return true;
         }
         return false;
