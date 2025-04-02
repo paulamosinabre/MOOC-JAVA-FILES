@@ -31,17 +31,42 @@ public class Money {
 
         return this.euros + "." + zero + this.cents + "e";
     }
-    
-    public Money plus (Money addition){
-        Money newMoney = new Money(this.euros, this.cents);
-        newMoney.euros = addition.cents + this.cents + addition.euros + this.euros;
-        
+
+    public Money plus(Money addition) {
+        //Money newMoney = new Money(this.euros, this.cents);
         int totalCents = this.cents + addition.cents;
         int totalEuros = this.euros + addition.euros;
-        return new Money(totalsEuros, totalCents);
-    }
-    
-    public Money minus (Money subtraction) {
 
+        return new Money(totalEuros, totalCents);
+    }
+
+    public boolean lessThan(Money compared) {
+
+        Money comparedMoney = (Money) compared;
+
+        // First, compare the euros
+        if (this.euros < compared.euros) {
+            return true;
+        }
+        // If euros are the same, compare the cents
+        if (this.euros == compared.euros && this.cents < compared.cents) {
+            return true;
+        }
+        return false;
+    }
+
+    public Money minus(Money decreaser) {
+
+        int totalCents = (this.euros * 100 + this.cents) - (decreaser.euros * 100 + decreaser.cents);
+
+        // Ensure money never goes negative (optional, depends on use case)
+        if (totalCents < 0) {
+            return new Money(0, 0);
+        }
+
+        int newEuros = totalCents / 100;  // Get euros
+        int newCents = totalCents % 100;  // Get remaining cents
+
+        return new Money(newEuros, newCents);
     }
 }
