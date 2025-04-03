@@ -12,6 +12,6 @@ public class MainProgram {
 
         System.out.println(a.lessThan(b));  // false
         System.out.println(b.lessThan(c));  // true
-
+        System.out.println("help");
     }
 }
