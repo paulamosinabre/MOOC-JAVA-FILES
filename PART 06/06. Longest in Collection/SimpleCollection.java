@@ -24,19 +24,14 @@ public class SimpleCollection {
             return null;
         }
 
-        // create an object reference for the object to be returned
-        // its first value is the first object on the list
-        SimpleCollection collection = this.elements.get(0);
-
-        //go through the list
-        for (SimpleCollection col : this.elements) {
-            // compare each object on the list
-            // to the collection -- we compare elements
-            // since we're searching for the longest,
-            if(){
-                return
+        String longest = this.elements.get(0);
+        for (String element : this.elements) {
+            if (element.length() > longest.length()) {
+                longest = element;
             }
         }
+
+        return longest;
     }
 
 }
