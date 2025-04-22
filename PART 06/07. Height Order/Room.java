@@ -23,4 +23,7 @@ public class Room {
     public ArrayList<Person> getPersons(){
         return this.list;
     }
+
+    public Person shortest(){
+    }
 }
