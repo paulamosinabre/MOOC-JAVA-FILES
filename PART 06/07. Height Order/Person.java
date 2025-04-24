@@ -47,8 +47,4 @@ public class Person {
         }
         return true;
     }
-
-    public Person take(){
-        
-    }
 }
