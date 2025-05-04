@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
+
 public class Room {
     private ArrayList<Person> list;
     
@@ -41,9 +42,12 @@ public class Room {
         Person returnObj = this.list.get(0);
         
         for(Person person: this.list){
-            if(person.getHeight() < returnObj.getHeight()) returnObj = person;
+            if(person.getHeight() < returnObj.getHeight()) {
+                returnObj = person;   
+            }   
         }
-        
+        list.remove(returnObj);
+       
         //Collections.sort(list);
         return returnObj;
     }
