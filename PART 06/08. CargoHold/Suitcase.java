@@ -9,34 +9,65 @@ The method public void addItem(Item item), which adds the item passed as a param
 The method public String toString(), which returns the string "x items (y kg)
  */
 public class Suitcase {
-    
+
     private int maximumWeight;
     private ArrayList<Item> items = new ArrayList<>();
-    
-    public Suitcase(int maximumWeight){
-        this.maximumWeight = maximumWeight;
+
+    public Suitcase(int maximumWeight) { this.maximumWeight = maximumWeight; }
+
+    public void addItem(Item item) {
+        int currentWeight = 0;
+        for (Item i : items) {
+            currentWeight += i.getWeight();
+        }
+
+        if (currentWeight + item.getWeight() <= maximumWeight) {
+            items.add(item);
+        }
     }
-    
-    public void addItem(Item item){
-        if(this.maximumWeight > item.getWeight()) items.add(item);
-    }
-   
-    public String toString(){
-        if(items.isEmpty()) return "0 items (0 kg)";
-        
-        int num = 0;
-        int numberOfItems = 0;
+
+    public String toString() {
+
+        if (items.isEmpty()) {
+            return "no items (0 kg)";
+        }
+
         int totalWeight = 0;
-        Item toBeReturned = this.items.get(num);
+        for (Item item : items) {
+            totalWeight += item.getWeight();
+
+        }
+        if (items.size() == 1) {
+            return items.size() + " item (" + totalWeight + " kg)";
+        }
+        return items.size() + " items (" + totalWeight + " kg)";
+    }
+    
+    public void printItems(){
         for(Item item: items){
-            if(this.maximumWeight > item.getWeight()){
-                totalWeight = item.getWeight() + toBeReturned.getWeight();
-                num++;
-                numberOfItems++;
-            } else {
-                return numberOfItems + " items (" + totalWeight + ")";
+            System.out.println(item.getItem() + "(" + item.getWeight() + " kg)");
+        }
+    }
+    
+    public int totalWeight(){
+        int totalWeight = 0;
+        for(Item item: items){
+            totalWeight += item.getWeight();
+        }
+        return totalWeight;
+    }
+    
+    public String heaviestItem(){
+        if(items.isEmpty()){
+            return null;
+        }
+        
+        int item = items.get(0);
+        for(Item element: items){
+            if(element.getWeight() > this.items()){
+                item = element;
             }
         }
-        return numberOfItems + " items (" + totalWeight + ")";
+        return item;
     }
 }
