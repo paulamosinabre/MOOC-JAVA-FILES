@@ -1,13 +1,6 @@
 
 import java.util.ArrayList;
 
-/*
-Constructor, to which the maximum weight is provided
-
-The method public void addItem(Item item), which adds the item passed as a parameter to the suitcase. The method does not return a value.
-
-The method public String toString(), which returns the string "x items (y kg)
- */
 public class Suitcase {
 
     private int maximumWeight;
@@ -57,14 +50,14 @@ public class Suitcase {
         return totalWeight;
     }
     
-    public String heaviestItem(){
+    public Item heaviestItem(){
         if(items.isEmpty()){
             return null;
         }
         
-        int item = items.get(0);
+        Item item = items.get(0);
         for(Item element: items){
-            if(element.getWeight() > this.items()){
+            if(element.getWeight() > item.getWeight()){
                 item = element;
             }
         }
