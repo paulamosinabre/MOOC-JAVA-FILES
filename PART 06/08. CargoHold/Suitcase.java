@@ -8,7 +8,7 @@ public class Suitcase {
 
     public Suitcase(int maximumWeight) { this.maximumWeight = maximumWeight; }
 
-    public void addItem(Item item) {
+    public void addItem(Item item) { 
         int currentWeight = 0;
         for (Item i : items) {
             currentWeight += i.getWeight();
