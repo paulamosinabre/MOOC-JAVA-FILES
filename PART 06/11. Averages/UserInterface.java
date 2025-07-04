@@ -19,7 +19,7 @@ public class UserInterface {
 
     public void readPoints() {
         while (true) {
-            System.out.print("Points: ");
+            System.out.println("Points: ");
             String input = scanner.nextLine();
             if (input.equals("")) {
                 break;
@@ -46,7 +46,9 @@ public class UserInterface {
 
             grade = grade - 1;
         }
-        
+        System.out.println("The average of points: " + this.register.averageOfPoints());
+        System.out.println("The average of grades: " + this.register.averageOfGrades());
+            
     }
 
     public static void printsStars(int stars) {
