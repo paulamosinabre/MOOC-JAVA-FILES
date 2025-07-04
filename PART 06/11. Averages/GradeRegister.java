@@ -48,6 +48,10 @@ public class GradeRegister {
     }
 
     public double averageOfGrades() {
+        if(grades.isEmpty()){
+            return -1;
+        }
+        
         if (grades != null) {
             int count = 0;
             double total = 0;
@@ -63,6 +67,9 @@ public class GradeRegister {
     
     public double averageOfPoints(){
         
+        if(rawGrades.isEmpty()){
+            return -1;
+        }
         if(rawGrades!=null){
             int count = 0;
             double total = 0;
@@ -73,6 +80,7 @@ public class GradeRegister {
             }
             return (double) total / count;
         }
+        
         return -1;
     }
 }
