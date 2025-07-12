@@ -5,10 +5,10 @@ public class LiquidContainers2 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        Container container = new Container();
         int first = 0;
         int second = 0;
         while (true) {
-
             System.out.println("First: " + first + "/100");
             System.out.println("Second: " + second + "/100");
 
@@ -21,7 +21,7 @@ public class LiquidContainers2 {
             String cmd = parts[0];
             int amount = Integer.parseInt(parts[1]);
 
-            Container container = new Container();
+            
             if (cmd.equals("add")) {
                 container.add(amount);
                 first = container.contains();
