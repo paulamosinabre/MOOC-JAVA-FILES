@@ -8,6 +8,11 @@ public class LiquidContainers2 {
         Container container = new Container();
         int first = 0;
         int second = 0;
+
+        container.add(10);
+        container.remove(20);
+        System.out.println(container);
+        
         while (true) {
             System.out.println("First: " + first + "/100");
             System.out.println("Second: " + second + "/100");
@@ -21,14 +26,10 @@ public class LiquidContainers2 {
             String cmd = parts[0];
             int amount = Integer.parseInt(parts[1]);
 
-            
             if (cmd.equals("add")) {
                 container.add(amount);
                 first = container.contains();
 
-                if (first >= 100) {
-                    first = 100;
-                }
             } else if (cmd.equals("move") && amount > 0) {
                 if (amount > first) {
                     amount = first;
@@ -42,8 +43,11 @@ public class LiquidContainers2 {
                 }
 
             } else if (cmd.equals("remove")) {
+                /*
                 container.remove(amount);
                 second = container.contains();
+                 */
+                second -= amount;
                 if (second < 0) {
                     second = 0;
                 }
