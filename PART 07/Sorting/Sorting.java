@@ -33,8 +33,8 @@ public class MainProgram {
     public static int indexOfSmallestFrom(int numbers[], int startIndex) {
         int smallestIndex = startIndex;
 
-        for (int i = startIndex; i < numbers.length; i++) {
-            if (numbers[i] < numbers[startIndex]) {
+        for (int i = startIndex + 1; i < numbers.length; i++) {
+            if (numbers[i] < numbers[smallestIndex]) {
                 smallestIndex = i;
             }
         }
@@ -43,28 +43,18 @@ public class MainProgram {
     }
 
     public static void swap(int[] array, int index1, int index2) {
-
-        for (int i = 0; i < array.length; i++) {
-            int arr = array[index1];
-            array[index1] = array[index2];
-            array[index2] = arr;
-        }
+        
+        int arr = array[index1];
+        array[index1] = array[index2];
+        array[index2] = arr;
     }
 
     public static void sort(int[] array) {
-        //int smallest = indexOfSmallestFrom(array, 0);
-        int smallest = array[0];
-        int index = 0;
-        for(int i = 0; i < array.length; i++){
-            for(int j = i + 1; i < array.length; i++){
-                if(smallest > array[j]){
-                    smallest = array[j];
-                    index = j;
-                    System.out.println(Arrays.toString(array));
-                }
-            }
-            
+         for (int i = 0; i < array.length; i++) {
+            int smallestIndex = indexOfSmallestFrom(array, i);
+            swap(array, i, smallestIndex);
+            System.out.println(Arrays.toString(array));
         }
-        
+
     }
 }
