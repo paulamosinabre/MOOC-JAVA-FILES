@@ -7,6 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         // insert test code here
+        /*
         int[] array = {3, 1, 5, 99, 3, 12};
         String[] num = {"3", "1", "5", "99", "3", "12"};
         sort(array);
@@ -23,6 +24,10 @@ public class Main {
         str.add("3");
         str.add("7");
         sortStrings(str);
+         */
+        String[] t = {"x", "a", "b", "d"};
+        sort(t);
+        System.out.println(Arrays.toString(t));
     }
 
     public static void sort(int[] array) {
@@ -31,12 +36,9 @@ public class Main {
     }
 
     public static void sort(String[] array) {
-        int[] numbers = new int[array.length];
-        for (int i = 0; i < array.length; i++) {
-            numbers[i] = Integer.parseInt(array[i]);
-        }
-        Arrays.sort(numbers);
-        System.out.println(Arrays.toString(numbers));
+
+        Arrays.sort(array);
+        System.out.println(Arrays.toString(array));
     }
 
     public static void sortIntegers(ArrayList<Integer> integers) {
@@ -45,14 +47,9 @@ public class Main {
     }
 
     public static void sortStrings(ArrayList<String> strings) {
-       int index = 0;
-       ArrayList<Integer> num = new ArrayList<>();
-       for(String s: strings){
-           num.add(Integer.parseInt(strings.get(index)));
-           index++;
-       }
-       Collections.sort(num);
-        System.out.println(num);
+
+        Collections.sort(strings);
+        System.out.println(strings);
     }
 
 }
