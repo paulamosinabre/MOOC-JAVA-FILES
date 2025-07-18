@@ -17,13 +17,15 @@ public class Main {
             
             if(num == -1){
                 System.out.println("Point average (all): " +grade.getAverage());
-                System.out.println("Point average (passed):" + grade.getPassingAverage());
+                System.out.println("Point average (passing):" + grade.getPassingAverage());
                 System.out.println("Pass percentage: " + grade.getPassPercentage());
+                System.out.println("Grade distribution: ");
+                grade.gradeDistribution();
                 break;
                 
             }
             
-            grade.calculateAverage(num);
+            grade.addGrade(num);
         }
         
     }
